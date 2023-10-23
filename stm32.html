@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xingke Yang's web</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="images/tt.jpg" alt="" /></a>
+					<h1><strong>This is Xingke Yang</strong><br />
+					<a href="index.html">Home</a><br />
+					<a href="PDF/CV.pdf" target="blank">My CV</a><br />
+					<a href="mailto:13281190592@163.com" class="icon solid fa-envelope"></span></a></h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+                <font face="Times New Roman" size="6" color=black>	
+                    <p style="text-align:justify;">
+                        Ventilator based on STM32 Microcontroller
+                    </p>
+                </font>
+                <img src="images/stm32/01.jpg" alt=""   width="200" height="160"/>
+                <img src="images/stm32/03.jpg" alt=""   width="200" height="140"/>
+                <img src="images/stm32/02.jpg" alt=""   width="200" height="160"/>
+                <img src="images/stm32/04.jpg" alt=""   width="200" height="160"/>
+				<!-- Two -->
+					<!-- <section id="two"> -->
+						<!-- <hr/> -->
+						<font face="Times New Roman" size="4" color=black>	
+						<h2>Project Source</h2>
+						<p style="text-align:justify;">
+                            This project is the graduation project of Xingke Yang's college career, supervised by Associate Professor
+                            <a href="https://faculty.swjtu.edu.cn/zhangyanrong/zh_CN/index.htm" target="_blank">Yanrong Zhang</a> .
+							The functional requirements of the project were determined by their joint deliberation.
+						</p>
+						</font>
+					<!-- </section> -->
+                    <hr/>
+                    <font face="Times New Roman" size="4" color=black>	
+						<h2>Project Description</h2>
+						<p style="text-align:justify;">
+							This project designed the control system for the ventilator, including system hardware selection, circuit design, sensor selection,
+							 airflow control device selection, airway design, and control algorithm program development. Ventilator system functions include tasks 
+							 such as intelligent switching, button  speed regulation, data acquisition, air pressure regulation, and error alarms. 
+						</p>
+						</font>
+					<!-- </section> -->
+					<hr/>
+
+						<font face="Times New Roman" size="3" color=black>	
+						<h2>Project Work Structure</h2>
+						
+                        <font size="4" face="times new roman, serif" color=black><b>■Hardware Selection</b></font><br>
+                        <br>
+                        <li>
+							<font size="4" face="times new roman, serif" color=black>Selected the minimum system board 
+                                with STM32F103C8T6 as the main chip according to on-chip resources, chip operating temperature, and computing power.</font><br>
+                        </li>
+                        <li>
+							<font size="4" face="times new roman, serif" color=black>Selected modules concerning pressure sensors, differential pressure flow 
+                                sensors and ultrasonic sensors based on the accuracy, range, pressure difference, cost, and propagation speed of sound waves in the air of gas pressure measurement.</font><br>
+                        </li>
+                        <li>
+							<font size="4" face="times new roman, serif" color=black>Selected the OLED display and the voice module.</font><br>
+                        </li>
+                        </font>
+                        <br>
+
+						<font face="Times New Roman" size="3" color=black>                           
+                            <font size="4" face="times new roman, serif" color=black><b>■Ventilator Air Channel Design</b></font><br>
+                            <br>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black>Drive the surrounding gas from the fan blade to 
+                                    generate airflow to meet the basic air supply function of the ventilator and selected the honeycomb throttling device.</font><br>
+                            </li>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black>Converted the airflow flow measurement into the pressure difference measurement before and after the throttling device.</font><br>
+                            </li>
+                            </font>
+                            <br>
+
+						<font face="Times New Roman" size="3" color=black>	
+                            
+                            <font size="4" face="times new roman, serif" color=black><b>■Ventilator Control Algorithm Programming</b></font><br>
+                            <br>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Smart Starter</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Utilized the ultrasonic sensor to measure the distance 
+                                        and programmed and packaged the module to ensure the normal operation of the ultrasonic sensor and improve the measurement accuracy.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Determined the smart start by the power-on button, voice prompts and the distance 
+                                        measured by the ultrasonic sensor when the system was reset and powered on.</font>
+                                </li>
+                            </ol>
+
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Motor Control Program</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Utilized timer to generate a 1KHz PWM wave to control the speed of the DC motor and set the pulse width resolution to 1%.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Obtained the airway pressure measurement value, displayed, and controlled the data.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Utilized the PI controller in the incremental PID controller algorithm to adjust the speed 
+                                        of the DC brushless motor to achieve the effect of rapid adjustment and a simplified algorithm.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Employed the PI controller to calculate the PWM wave parameters and controlled the speed of
+                                         the fan to make the ventilator output a stable desired pressure.</font>
+                                </li>
+                            </ol>
+
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Data Display Program</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Obtained and pre-stored the corresponding codes of the characters in the array to facilitate the reading of data during display.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Obtained the airway airflow measurement value and displayed the data.</font>
+                                </li>
+                            </ol>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Alarm Prompt Program</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Set the first-class alarm and the second-class alarm to ensure the safe operation of the ventilator.</font>
+                                </li>
+                            </ol>
+                            </font>
+
+					<!-- </section> -->
+                    <hr/>
+                    <font face="Times New Roman" size="4" color=black>	
+						<h2>Project Result</h2>
+                        <ol>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black>When the mask is moved so that the measurement distance is less than 5cm, the voice module of the ventilator 
+                                    prompts to power on, and the initial boot loading interface is performed. After loading for about 2 seconds, the ventilator works normally.</font>
+                            </li>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black>The air pressure adjustment and display, the alarm function and the functions 
+                                    and indicators of various sensors all meet the normal requirements.</font>
+                            </li>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black>The stability of the system's air pressure output fluctuates well, and the air pressure 
+                                    fluctuation error of this system is twice as short as that of the traditional ventilator.</font>
+                            </li>
+                        </ol>
+                    </font>
+
+                        <video  poster="images/stm32/04.jpg" width="850" height="440" controls preload="preload"  poster="images/trash bin/1.jpg">  
+                        <source src="video/stm32.mp4" type="video/mp4"> </video>
+                    <br>
+                    <br>
+				
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Copyright 2023 Xingke Yang.</li><br>
+						Hosted by GitHub Pages.<br>
+						Last updated: October 17, 2023.
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

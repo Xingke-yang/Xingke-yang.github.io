@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xingke Yang's web</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="images/tt.jpg" alt="" /></a>
+					<h1><strong>This is Xingke Yang</strong><br />
+					<a href="index.html">Home</a><br />
+					<a href="PDF/CV.pdf" target="blank">My CV</a><br />
+					<a href="mailto:13281190592@163.com" class="icon solid fa-envelope"></span></a></h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+                <font face="Times New Roman" size="6" color=black>	
+                    <p style="text-align:justify;">
+                        Intelligent Crane Robot based on Image Recognition
+                    </p>
+                </font>
+                <img src="images/crane/01.jpg" alt=""   width="200" height="160"/>
+                <img src="images/crane/02.jpg" alt=""   width="200" height="160"/>
+                <img src="images/crane/04.jpg" alt=""   width="200" height="160"/>
+                <img src="images/crane/03.jpg" alt=""   width="200" height="160"/>
+				<!-- Two -->
+					<!-- <section id="two"> -->
+						<!-- <hr/> -->
+						<font face="Times New Roman" size="4" color=black>	
+						<h2>Project Source</h2>
+                        <p style="text-align:justify;">
+                            Xingke Yang and his teammates participated in the biennial "Logistics Technology (Crane) Creative Competition of Chinese College Students" in 2021.
+                            Based on the requirements of the competition task, they invented an intelligent crane robot.
+						</p>
+						</font>
+					<!-- </section> -->
+                    <hr/>
+                    <font face="Times New Roman" size="4" color=black>	
+						<h2>Project Description</h2>
+                        <p style="text-align:justify;">
+                            Utilizing intelligent image recognition and control algorithms, together with the design of a bridge-type working structure, 
+                            the crane can recognize six milk crates placed in random order with different markings (triangles, squares, and circles in blue/red respectively) within the task area. 
+                            Through the prescribed obstacle route, it will transport all of the milk crates to the placement area and stack them neatly in the prescribed placement order 
+                            (two layers in the order of triangles, squares, and circles, with red on top and blue on the bottom).
+						</p>
+						</font>
+					<!-- </section> -->
+					<hr/>
+
+						<font face="Times New Roman" size="3" color=black>	
+                            <h2>Project Work Structure</h2>
+                            <font size="4" face="times new roman, serif" color=black><b>■Target Recognition and Grayscale Sensor Settings</b></font><br>
+                            <br>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Identification</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Utilized a smart camera to take pictures 
+                                        of 6 signs under different angles and light to form a data set and imported the CNN-trained network into the camera.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Connected the two cameras to the Arduino main control 
+                                        board and performed the camera image recognition and returned the recognition result to the main control board.</font>
+                                </li>
+                            </ol>
+
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Grayscale Sensor Recognition</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Improved the accuracy of operation by placing black tape marks on the hook and box positions.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Utilized the timer to query the return value of the 5-way grayscale sensor and generated an interrupt signal for the black mark.</font>
+                                </li>
+                            </ol>
+                            </font>
+
+                            <br>
+                            <font face="Times New Roman" size="3" color=black>
+                            <font size="4" face="times new roman, serif" color=black><b>■Motor Control</b></font><br>
+                            <br>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Stepper Motor: the box moves left and right</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Calculated the number of 
+                                        square waves and rotated the pulse drive motor by a fixed angle through a cycle to control the left and right movement of the 6 boxes.</font>
+                                </li>
+                            </ol>
+
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>DC Motor: the box moves up and down</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Utilized open-loop control to drive the box to move up and down and reduced the error 
+                                        caused by open-loop control by slowing down the speed of the DC motor and controlling the initial height.</font>
+                                </li>
+                            </ol>
+
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>DC Motor: the wheel moves back and forth</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Controlled the four motor signal interfaces of the driver board by generating PWM waves 
+                                        with different duty ratios and adjusted the PWM of the square wave signal in combination with the feedback signal.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Utilized the interrupt count to count the rising edge of the feedback square wave to 
+                                        obtain the current running speed of the wheel and adjusted the wheel speed by an incremental PID control algorithm.</font>
+                                </li>
+                            </ol>
+                            </font>
+
+                            <br>
+
+						<font face="Times New Roman" size="3" color=black>	 
+                            <font size="4" face="times new roman, serif" color=black><b>■Shortest Path Calculation</b></font><br>
+                            <br>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Placed the 6 boxes to the placement position through three 1×6 arrays.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Calculated the number of moving steps required to place the box and stored 
+                                        the corresponding position of the first array.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Read the number of steps in the second array and the box number corresponding
+                                         to the number of steps in the third array and drive the motor of the corresponding box to put down the box.</font>
+                                </li>
+                            </ol>
+                            </font>
+    
+                           
+
+					<!-- </section> -->
+                    <hr/>
+                    <font face="Times New Roman" size="4" color=black>	
+                        <h2>Project Result</h2>
+                        <ol>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black>The identification effect of the target is more than <b>99% </b>accurate.
+                                     For the movement in the front and rear, left and right, and up and down directions, the error distances are <b>1cm, 1.5cm and 0.1cm</b> respectively.</font>
+                            </li>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black>For the falling effect, since the hook rack is not a rigid body, there is shaking during the lowering process, 
+                                    and the shaking error is controlled within<b> 2.5cm</b> to ensure that it can be accurately placed in the effective area.</font>
+                            </li>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black>The calculation accuracy of the minimum distance algorithm is high. Under each random order, 
+                                    six boxes can be correctly stacked according to the minimum distance, and the task of moving the boxes can be completed in <b>57s</b>, 
+                                    which is far less than the specified time of 4min.</font>
+                            </li>
+                        </ol>
+                    </font>
+                        <video poster="images/crane/03.jpg" width="850" height="440" controls preload="preload"  poster="images/trash bin/1.jpg">  
+                        <source src="video/crane.mp4" type="video/mp4"> </video>
+
+                    <hr/>
+                    <font face="Times New Roman" size="4" color=black>	
+						<h2>Project Achievements</h2>
+                        <li>
+                            <font size="4" face="times new roman, serif" color=black><a href="craneaward.html" ><b>National First Prize:</b></a>After the selection of the school competition and the national competition. 
+                                Finally achieved the <b>National First Prize</b> in this national Class A subject competition. According to the speed and accuracy of the tasks completed in the competition, 
+								the scoring of the equipment function is ranked. Among the <b>600+ </b>teams participating in the same program nationwide, 
+								Our device ranked<b> 1st</b> in the speed of task completion and<b> 6th</b> in total race points!</font><br>
+                        </li>
+                    </font>
+                    <br>
+                    <br>
+	
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Copyright 2023 Xingke Yang.</li><br>
+						Hosted by GitHub Pages.<br>
+						Last updated: October 17, 2023.
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

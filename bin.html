@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Xingke Yang's web</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="images/tt.jpg" alt="" /></a>
+					<h1><strong>This is Xingke Yang</strong><br />
+					<a href="index.html">Home</a><br />
+					<a href="PDF/CV.pdf" target="blank">My CV</a><br />
+					<a href="mailto:13281190592@163.com" class="icon solid fa-envelope"></span></a></h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+                <font face="Times New Roman" size="6" color=black>	
+                    <p style="text-align:justify;">
+                        Automatic Intelligent Garbage Classification Bin
+                    </p>
+                </font>
+                <img src="images/trash bin/01.jpg" alt=""   width="250" height="180"/>
+                <img src="images/trash bin/02.jpg" alt=""   width="150" height="180"/>
+                <img src="images/trash bin/03.jpg" alt=""   width="200" height="180"/>
+                <img src="images/trash bin/04.jpg" alt=""   width="200" height="180"/>
+				<!-- Two -->
+					<!-- <section id="two"> -->
+						<font face="Times New Roman" size="4" color=black>	
+						<h2>Project Source</h2>
+                        <p style="text-align:justify;">
+                            Xingke Yang and his teammates participated in the biennial "Engineering Practice and Innovation Ability Competition of Chinese College Students" in 2020.
+                            Based on the functional requirements of the "Intelligent Garbage Classification Project", they invented an intelligent garbage classification bin.
+						</font>
+					<!-- </section> -->
+                    <hr/>
+                    <font face="Times New Roman" size="4" color=black>	
+						<h2>Project Description</h2>
+						<p style="text-align:justify;">
+                            Utilizing intelligent image recognition and control algorithms, along with an infinite-degree-of-freedom flap structural design, this intelligent 
+                            garbage classification bin can intelligently identify, compress, classify, and store common household garbage. In addition, it has a full-load warning 
+                            function and is equipped with a high-brightness display that supports video and picture playback in multiple formats and displays various data 
+                            in the garbage bin. Garbage is categorized into "recyclable waste, kitchen waste, hazardous waste and other waste".
+						</p>
+						</font>
+					<!-- </section> -->
+					<hr/>
+
+						<font face="Times New Roman" size="3" color=black>	
+						<h2>Project Work Structure</h2>
+						
+                        <font size="4" face="times new roman, serif" color=black><b>■External Device Design</b></font><br>
+                        <br>
+                        <li>
+							<font size="4" face="times new roman, serif" color=black><b>Input Device:</b>Shot 30 kinds of garbage from multiple angles to form a neural network data set, imported the learned network
+                                 into the camera, and exchanged data with the Arduino motherboard through the I2C bus.</font><br>
+                        </li>
+                        <li>
+							<font size="4" face="times new roman, serif" color=black><b>Display Device:</b> Utilized the Raspberry Pi supporting display screen to display the identified garbage name, the number of this time,
+                                 whether it was completed or not, the full load status, and the current total number of various types of garbage.</font><br>
+                        </li>
+                        <li>
+							<font size="4" face="times new roman, serif" color=black><b>Detection Device: </b>Utilized four ultrasonic distance sensors to monitor a full load of each trash can in real-time and fed the measured
+                                 distance of the garbage in the trash can from the top of the bucket to the main control board in time to realize the full-load function monitoring.</font><br>
+                        </li>
+                        <li>
+                            <font size="4" face="times new roman, serif" color=black><b>Actuator Device: </b>Employed the 180° steering gear, lift push rod and compression push rod to form the execution device to control the 
+                                inclination of the garbage receiving platform to any angle, compress cans and other items.</font><br>
+						</li>
+                        </font>
+
+                        <br>
+						<font face="Times New Roman" size="3" color=black>	
+                            
+                            <font size="4" face="times new roman, serif" color=black><b>■Control Algorithm</b></font><br>
+                            <br>
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Garbage Type Identification Algorithm Design</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Initialized the configuration for the above peripherals, request the camera to obtain the recognition result, utilized two recognitions
+                                         to de-jitter, and selected and judged the returned ID value to determine the type of garbage to execute the corresponding function of the throwing function.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Stored the key information in the EEPROM memory for recording and storage and sent different garbage corresponding character messages 
+                                        to the Raspberry Pi for display through the serial port.</font>
+                                </li>
+                            </ol>
+
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Results Display Algorithm Design</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Utilized the relevant library functions to call the video file, played the garbage classification propaganda video in a loop,
+                                         and monitored the serial port data.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Called the prepared audio files in different garbage execution functions for voice broadcast prompts.</font>
+                                </li>
+                            </ol>
+
+                            <li>
+                                <font size="4" face="times new roman, serif" color=black><b>Garbage Placement and Full Load Judgment</b></font>
+                            </li>
+                            <ol>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Completed the garbage dumping by controlling the lowering of the telescopic push rod and controlling the angle of the steering gear.</font>
+                                </li>
+                                <li>
+                                    <font size="4" face="times new roman, serif" color=black>Sent information to the upper computer display, stored the information in the EEPROM memory and judged whether the trash can was fully 
+                                        loaded by querying the distance value returned by the ultrasonic sensor after delivery.</font>
+                                </li>
+                            </ol>
+                            </font>
+
+					<!-- </section> -->
+                    <hr/>
+                    <font face="Times New Roman" size="4" color=black>	
+						<h2>Project Result</h2>
+						<p style="text-align:justify;">
+							In the actual application scenario, the accuracy of recognizing and classifying 30 kinds of common household garbage can reach 95%, and a piece of garbage can be classified and put away in about 2.5 seconds.
+ 							At the same time, when the capacity of the garbage bin exceeds 80%, it will trigger a full-load alert.
+						</p>
+                    </font>
+
+                        <video poster="images/trash bin/04.jpg" width="850" height="440" controls preload="preload"  poster="images/trash bin/1.jpg">  
+                        <source src="video/bin.mp4" type="video/mp4"></video>
+
+                    <hr/>
+                    <font face="Times New Roman" size="4" color=black>	
+						<h2>Project Achievements</h2>
+                        <li>
+                            <font size="4" face="times new roman, serif" color=black><a href="binaward.html"><b>National First Prize:</b></a>After the selection of the school competition, the provincial competition, and the national competition. 
+                                Finally achieved the <b>Gold Medal (National First Prize)</b> in this national Class A subject competition. According to the speed and accuracy of the tasks completed in the competition, 
+                                the scoring of the equipment function is ranked. Among the <b>900+ </b>teams participating in the same program nationwide, our device ranked<b> 11th</b> in terms of task completion and speed.</font><br>
+                        </li>
+                        <li>
+                            <font size="4" face="times new roman, serif" color=black><a href="PDF/Utility Model Patent.pdf" target="_blank"><b>National Utility Model Patent:</b></a> We applied for a utility model patent for the initial first version of the intelligent garbage classification bin after the competition,
+                                 which has now been granted.</font><br>
+                        </li>
+                    </font>
+                    <br>
+                    <br>					
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Copyright 2023 Xingke Yang.</li><br>
+						Hosted by GitHub Pages.<br>
+						Last updated: October 17, 2023.
+					</ul>
+				</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
